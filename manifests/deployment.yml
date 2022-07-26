@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sazurecicdtestv1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sazurecicdtestv1
+  template:
+    metadata:
+      labels:
+        app: sazurecicdtestv1 
+    spec:
+      containers:
+        - name: sazurecicdtestv1 
+          image: azureregistrydevops.azurecr.io/sazurecicdtestv1
+          ports:
+          - containerPort: 80
